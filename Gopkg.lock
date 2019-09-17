@@ -348,6 +348,14 @@
   version = "v3.0.0"
 
 [[projects]]
+  digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
+
+[[projects]]
   digest = "1:09fd8d3e830bac0a0e2d1f7009fe33a0c435ee14ae818be9cc9ceb5f77da18ae"
   name = "github.com/prometheus/client_golang"
   packages = [
@@ -516,9 +524,12 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:382bb5a7fb4034db3b6a2d19e5a4a6bcf52f4750530603c01ca18a172fa3089b"
+  digest = "1:a2fc247e64b5dafd3251f12d396ec85f163d5bb38763c4997856addddf6e78d8"
   name = "golang.org/x/sync"
-  packages = ["semaphore"]
+  packages = [
+    "errgroup",
+    "semaphore",
+  ]
   pruneopts = "NUT"
   revision = "112230192c580c3556b8cee6403af37a4fc5f28c"
 
@@ -990,24 +1001,25 @@
   revision = "a01b7d5d6c2258c80a4a10070f3dee9cd575d9c7"
 
 [[projects]]
-  branch = "master"
-  digest = "1:b9a2a90a672cca14c7353eff529b8375db18878fd03fff30a63cb5500decdc08"
+  branch = "release-0.9"
+  digest = "1:19beb74b5d34a69dc256f965c3ef2519fdb2ae74590174b1231a1f0da7e26fd4"
   name = "knative.dev/pkg"
   packages = [
     "apis",
     "apis/duck",
+    "apis/duck/v1",
     "apis/duck/v1beta1",
     "apis/v1alpha1",
     "changeset",
+    "client/injection/kube/client",
+    "client/injection/kube/informers/core/v1/service",
+    "client/injection/kube/informers/factory",
     "codegen/cmd/injection-gen",
     "codegen/cmd/injection-gen/args",
     "codegen/cmd/injection-gen/generators",
     "configmap",
     "controller",
     "injection",
-    "injection/clients/kubeclient",
-    "injection/informers/kubeinformers/corev1/service",
-    "injection/informers/kubeinformers/factory",
     "injection/sharedmain",
     "kmeta",
     "kmp",
@@ -1015,6 +1027,8 @@
     "logging/logkey",
     "metrics",
     "metrics/metricskey",
+    "network",
+    "profiling",
     "signals",
     "system",
     "tracker",
@@ -1022,24 +1036,25 @@
     "webhook",
   ]
   pruneopts = "T"
-  revision = "c11c79155fa4be834735d1d0cbcafad88b16be69"
+  revision = "74659889c421b26b9a416fd203f5a8d3e602bfb2"
 
 [[projects]]
   branch = "master"
-  digest = "1:305af75fc194c059ae710a75276ca8f1870c959214b18ed33f7ef8671995947f"
+  digest = "1:964a4f9e12d5021b9d550e04c36cf23feb880e286ceede1b246d5c0e43b523b9"
   name = "knative.dev/test-infra"
   packages = [
     "scripts",
     "tools/dep-collector",
   ]
   pruneopts = "UT"
-  revision = "f3fe0bcc30693df8e3c9616358b16045efb9ed10"
+  revision = "efad44559f944cfc58dc5bca076eeb3ec20fb346"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
     "go.uber.org/zap",
+    "golang.org/x/sync/errgroup",
     "k8s.io/api/core/v1",
     "k8s.io/apimachinery/pkg/api/equality",
     "k8s.io/apimachinery/pkg/api/errors",
@@ -1069,15 +1084,17 @@
     "k8s.io/code-generator/cmd/lister-gen",
     "knative.dev/pkg/apis",
     "knative.dev/pkg/apis/duck/v1beta1",
+    "knative.dev/pkg/client/injection/kube/informers/core/v1/service",
     "knative.dev/pkg/codegen/cmd/injection-gen",
     "knative.dev/pkg/configmap",
     "knative.dev/pkg/controller",
     "knative.dev/pkg/injection",
-    "knative.dev/pkg/injection/informers/kubeinformers/corev1/service",
     "knative.dev/pkg/injection/sharedmain",
     "knative.dev/pkg/kmeta",
     "knative.dev/pkg/logging",
     "knative.dev/pkg/logging/logkey",
+    "knative.dev/pkg/network",
+    "knative.dev/pkg/profiling",
     "knative.dev/pkg/signals",
     "knative.dev/pkg/system",
     "knative.dev/pkg/tracker",
