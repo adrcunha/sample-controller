@@ -986,7 +986,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:6e410a2318808cce9fd9fcdc5c1821b96b89ad1cbe17251c9915c3c4da1b27fe"
+  digest = "1:d772e1e5cb8dee04f869b516c450bb12ca799de9add802a07c49c8c8cf0907ad"
   name = "knative.dev/pkg"
   packages = [
     "apis",
@@ -1020,18 +1020,18 @@
     "webhook",
   ]
   pruneopts = "T"
-  revision = "d90ec6a0150ac99846556d88d5a54093418ec2a7"
+  revision = "d02c80dc625667d793a732b019503197913fa756"
 
 [[projects]]
   branch = "master"
-  digest = "1:d65a0f4c8458b9720f97b17d6d04c9efe341298f1c3f6c37e124a6c83c716668"
+  digest = "1:8009d9ea7464198279c5c1b1a760365c1f731aa88239632c08929df5b7f323f6"
   name = "knative.dev/test-infra"
   packages = [
     "scripts",
     "tools/dep-collector",
   ]
   pruneopts = "UT"
-  revision = "baf7e79986726748f7b36aa8f31f8bbfaa8717b6"
+  revision = "5d51ed40c38a606beaa42197961edb6d737227fc"
 
 [[projects]]
   digest = "1:8730e0150dfb2b7e173890c8b9868e7a273082ef8e39f4940e3506a481cf895c"
